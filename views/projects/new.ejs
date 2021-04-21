@@ -1,0 +1,67 @@
+<% layout('layouts/boilerplate')%>
+<div class="row col-md-12 mx-auto">
+    <h1 class="text-center">New Project</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/projects" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">  <!-- Title -->
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="project[title]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            
+            <div class="mb-3">  <!-- Description -->
+                <label class="form-label" for="description">Description & Tasks</label>
+                <textarea class="form-control" type="text" id="description" name="project[description]" rows="3" required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            
+            <div class="mb-3">  <!-- Project Status -->
+                <div><label class="form-label" for="status">Status</label></div>
+                <div class="btn-group" id="status" role="group" aria-label="Basic radio toggle button group" required>
+                    <input type="radio" class="btn-check" name="project[status]" id="proposed-status" autocomplete="off" checked>
+                    <label class="btn btn-outline-secondary" for="proposed-status">Proposed</label>
+                  
+                    <input type="radio" class="btn-check" name="project[status]" id="active-status" autocomplete="off">
+                    <label class="btn btn-outline-info" for="active-status">Active</label>
+                  
+                    <input type="radio" class="btn-check" name="project[status]" id="frozen-status" autocomplete="off">
+                    <label class="btn btn-outline-warning" for="frozen-status">Frozen</label>
+
+                    <input type="radio" class="btn-check" name="project[status]" id="completed-status" autocomplete="off">
+                    <label class="btn btn-outline-success" for="completed-status">Completed</label>
+
+                    <input type="radio" class="btn-check" name="project[status]" id="canceled-status" autocomplete="off">
+                    <label class="btn btn-outline-danger" for="canceled-status">Canceled</label>
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="mb-3">  <!-- Team Location -->
+                <label class="form-label" for="location">Team Location</label>
+                <input class="form-control" type="text" id="location" name="project[location]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="form-file custom-file"> <!-- Upload Images -->
+                <label class="form-label" for="image">Upload Images</label>
+                <input type="file" class="form-control custom-file-input" id="image" name="image" multiple>
+                <label class="custom-file-label" for="image">
+            </div>            
+
+            <div class="mb-3 d-grid gap-2 col-6 mx-auto">  <!-- Add Project button -->
+                    <button class="btn btn-success">Add Project</button>
+            </div>
+        </form>
+        <div class="mb-3 d-grid gap-2 col-6 mx-auto">
+            <a class="mx-auto" href="/projects">All Projects</a>
+        </div>
+    </div>
+</div>
